@@ -1,0 +1,8 @@
+# pinned by pip-compile
+fastyaml==1.2.0
+urlkit==2.1.0
+logfmtx==0.8.0
+tinycache==2.5.0
+oldlib==1.2.0
+deepdep==1.0.0
+flask==3.0.0

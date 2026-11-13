@@ -1,0 +1,117 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://openvex.dev/docs/vex-reach/2552454f2fd9d51645cd4d94c260aeb3",
+  "author": "João Victor",
+  "timestamp": "2026-11-13T12:00:00Z",
+  "version": 1,
+  "tooling": "vex-reach 1.0.0",
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "EXAMPLE-2026-0001"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/py-webapp",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/fastyaml@1.2.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected",
+      "action_statement": "Upgrade fastyaml to 1.4.0 or later.",
+      "status_notes": "Vulnerable code is referenced: src/app.py:12."
+    },
+    {
+      "vulnerability": {
+        "name": "EXAMPLE-2026-0002"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/py-webapp",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/urlkit@2.1.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "urlkit is imported (src/app.py:3) but none of the vulnerable symbols (parse_legacy) are referenced in non-test code."
+    },
+    {
+      "vulnerability": {
+        "name": "EXAMPLE-2026-0003"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/py-webapp",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/logfmtx@0.8.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "logfmtx is only used from test code (tests/test_log.py:5, tests/test_log.py:1)."
+    },
+    {
+      "vulnerability": {
+        "name": "EXAMPLE-2026-0004"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/py-webapp",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/tinycache@2.5.0"
+            }
+          ]
+        }
+      ],
+      "status": "affected",
+      "action_statement": "Upgrade tinycache to 3.0.0 or later.",
+      "status_notes": "The package is imported (src/app.py:4) and the advisory names no specific symbols, so reachability cannot be ruled out."
+    },
+    {
+      "vulnerability": {
+        "name": "EXAMPLE-2026-0005"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/py-webapp",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/oldlib@1.2.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "oldlib 1.2.0 is outside the affected range (<1.0.0)."
+    },
+    {
+      "vulnerability": {
+        "name": "EXAMPLE-2026-0006"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/py-webapp",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/deepdep@1.0.0"
+            }
+          ]
+        }
+      ],
+      "status": "under_investigation",
+      "status_notes": "deepdep 1.0.0 is in the lockfile but never imported directly. It may be a transitive dependency; check which package pulls it in."
+    }
+  ]
+}

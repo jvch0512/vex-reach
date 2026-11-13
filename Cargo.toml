@@ -1,0 +1,11 @@
+[package]
+name = "vex-reach"
+version = "1.0.0"
+edition = "2021"
+description = "Turns a vulnerability list plus your lockfile and source into an OpenVEX document: which CVEs actually reach your code. Zero dependencies."
+license = "MIT"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
